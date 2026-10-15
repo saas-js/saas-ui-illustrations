@@ -20,6 +20,19 @@ markdown: kramdown
 
 exclude:
 - README.md
+- Gemfile
+- Gemfile.lock
+- vendor
+- node_modules
+- package.json
+- package-lock.json
+- wrangler.jsonc
+- .github
+- .gitignore
+- .gitattributes
+- .ruby-version
+- .assetsignore
+- _headers
 
 safe: true
 lsi: false

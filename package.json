@@ -1,0 +1,15 @@
+{
+  "name": "saas-ui-illustrations",
+  "private": true,
+  "description": "SaaS UI illustrations site — Jekyll static assets on Cloudflare Workers",
+  "scripts": {
+    "build": "bundle exec jekyll build && cp _headers .assetsignore _site/",
+    "dev": "npm run build && wrangler dev",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:dry-run": "npm run build && wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.3"
+  }
+}

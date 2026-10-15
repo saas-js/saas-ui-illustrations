@@ -1,0 +1,26 @@
+{
+  // Cloudflare Workers static-assets config for illustrations.saas-ui.dev.
+  // Assets-only Worker (no Worker script): Jekyll output in ./_site is served directly.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "saas-ui-illustrations",
+  // Set this to today's date
+  "compatibility_date": "2026-10-15",
+  "assets": {
+    "directory": "./_site",
+    // Match Vercel: unknown paths serve 404.html with HTTP 404.
+    "not_found_handling": "404-page",
+    // Serve / from index.html. (html_handling "none" 404s the homepage.)
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": {
+    "enabled": true,
+    "traces": {
+      "enabled": true
+    }
+  }
+  // Custom domain: do not enable until DNS for saas-ui.dev is on Cloudflare.
+  // Then attach illustrations.saas-ui.dev in the dashboard, or uncomment:
+  // "routes": [
+  //   { "pattern": "illustrations.saas-ui.dev", "custom_domain": true }
+  // ]
+}
